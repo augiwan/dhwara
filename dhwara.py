@@ -1,13 +1,13 @@
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route("/signin")
 def signin():
-    return "Sign in!"
+    return render_template('signin.jinja2')
 
 @app.route("/")
 def dash():
-    return "Jesus Christ!"
+    return render_template('dashboard.jinja2')
 
 if __name__ == "__main__":
     app.debug = True
